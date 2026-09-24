@@ -557,15 +557,15 @@ var p2=function(x){return x.toFixed(x<10?2:1)+'%';};
 
 /* ---------- datos · corte 23/09/2026 10:24 Perú · una sola consulta ---------- */
 var PROD=[
- {k:'IMPULSA_MUJER',n:'Impulsa Mujer',c:'--c1',A:[79763,125326],B:[4182,6345],C:[34538,56874],D:[38548,63907]},
- {k:'MICROCREDITO',n:'Microcrédito',c:'--c2',A:[15647,40853],B:[285,931],C:[1791,5302],D:[5345,16794]},
- {k:'TIGRE',n:'Tigre',c:'--c3',A:[4945,7780],B:[238,384],C:[1532,2458],D:[2509,4212]},
- {k:'PYME',n:'Pyme',c:'--c4',A:[3704,4433],B:[61,78],C:[152,184],D:[758,988]},
- {k:'GRUPPI',n:'Gruppi',c:'--c5',A:[1184,1807],B:[62,97],C:[535,920],D:[980,1673]},
- {k:'AHORRISTA',n:'Ahorrista',c:'--c6',A:[287,287],B:[8,8],C:[5,5],D:[153,153]}
+ {k:'IMPULSA_MUJER',n:'Impulsa Mujer',c:'--c1',A:[79730,125275],B:[4183,6349],C:[34570,56921],D:[38548,63907]},
+ {k:'MICROCREDITO',n:'Microcrédito',c:'--c2',A:[15640,40831],B:[287,938],C:[1796,5317],D:[5345,16794]},
+ {k:'TIGRE',n:'Tigre',c:'--c3',A:[4940,7771],B:[240,387],C:[1535,2464],D:[2509,4212]},
+ {k:'PYME',n:'Pyme',c:'--c4',A:[3699,4426],B:[63,81],C:[155,188],D:[758,988]},
+ {k:'GRUPPI',n:'Gruppi',c:'--c5',A:[1183,1806],B:[62,97],C:[536,921],D:[980,1673]},
+ {k:'AHORRISTA',n:'Ahorrista',c:'--c6',A:[286,286],B:[8,8],C:[6,6],D:[153,153]}
 ];
 var CARTONES=341799;
-var GLOBAL={A:[99326,180486],B:[4452,7843],C:[35268,65743],D:[43142,87727]};
+var GLOBAL={A:[99279,180395],B:[4459,7860],C:[35308,65817],D:[43142,87727]};
 var SEGDEF=[
  {k:'A',n:'Sin cuenta en la app',v:'--s1',d:'Nunca se registró. Para jugar necesita descargar la app, registrarse y validar su celular por OTP. Es el trecho más largo y el que no se resuelve con un recordatorio.'},
  {k:'B',n:'Registro incompleto',v:'--s2',d:'Creó la cuenta pero no llegó a definir contraseña. Quedó a un paso: basta completar el registro para que pueda entrar y generar.'},
@@ -573,7 +573,7 @@ var SEGDEF=[
  {k:'D',n:'Generó sus cartones',v:'--s4',d:'Ya tiene sus cartones asignados y está lista para el sorteo del 23 de septiembre.'}
 ];
 var HORA=[['22·11',6],['22·12',584],['22·13',972],['22·14',557],['22·15',477],['22·16',482],['22·17',563],['22·18',578],['22·19',390],['22·20',446],['22·21',514],['22·22',287],['22·23',126],['23·00',36],['23·01',19],['23·02',14],['23·03',17],['23·04',15],['23·05',29],['23·06',68],['23·07',100],['23·08',2110],['23·09',4911],['23·10',3218],['23·11',1956],['23·12',1424],['23·13',1212],['23·14',1257],['23·15',1397],['23·16',1238],['23·17',1083],['23·18',2332],['23·19',2828],['23·20',1643],['23·21',789],['23·22',371],['23·23',209],['24·00',85],['24·01',39],['24·02',14],['24·03',22],['24·04',20],['24·05',35],['24·06',107],['24·07',220],['24·08',465],['24·09',624],['24·10',1476],['24·11',1097],['24·12',806],['24·13',735],['24·14',586],['24·15',743],['24·16',745],['24·17',713],['24·18',352]];
-var DIA=[['01',897,1908],['02',968,2019],['03',1130,2120],['04',1178,2268],['05',201,1364],['06',115,912],['07',954,1934],['08',1017,2099],['09',997,2249],['10',1146,2456],['11',1085,2333],['12',258,1534],['13',117,1089],['14',848,2100],['15',1039,2296],['16',976,2539],['17',875,2535],['18',924,2505],['19',208,1660],['20',59,1162],['21',1792,2824],['22',6047,9172],['23',18659,21874],['24',6803,11412]];
+var DIA=[['01',897,1908],['02',968,2019],['03',1130,2120],['04',1178,2268],['05',201,1364],['06',115,912],['07',954,1934],['08',1017,2099],['09',997,2249],['10',1146,2456],['11',1085,2333],['12',258,1534],['13',117,1089],['14',848,2100],['15',1039,2296],['16',976,2539],['17',875,2535],['18',924,2505],['19',208,1660],['20',59,1162],['21',1792,2824],['22',6047,9172],['23',18659,21874],['24',6851,11477]];
 
 /* Datos de la pestaña Hoy. Se declaran aquí, antes de la cuenta
    regresiva, porque esa función usa META.cierre al arrancar. */
@@ -597,13 +597,13 @@ var HOY=[
  [15,558,516,0,0,743,1570],
  [16,599,567,0,0,745,1645],
  [17,586,533,0,0,713,1556],
- [18,431,381,0,0,352,710]
+ [18,479,421,0,0,352,710]
 ];
-var HOY_TOT={altas:6803, completos:6292, incompletos:511, incompElig:478, gen:8884, cart:18792};
-var ATASCO={crear:{total:525,vigente:35,expirado:490}, recuperar:{total:88,vigente:5,expirado:83}};
-var META={elegibles:182188, registradas:35268, cartonesReg:65743, sinCuenta:99326,
-          ultima:713, ultimaHora:'17:00', enCurso:352, enCursoHora:'18:00', enCursoMin:50,
-          corte:'2026-09-24 18:50', fechaLarga:'jueves 24 de septiembre',
+var HOY_TOT={altas:6851, completos:6332, incompletos:519, incompElig:490, gen:8884, cart:18792};
+var ATASCO={crear:{total:535,vigente:45,expirado:490}, recuperar:{total:89,vigente:5,expirado:84}};
+var META={elegibles:182188, registradas:35308, cartonesReg:65817, sinCuenta:99279,
+          ultima:713, ultimaHora:'17:00', enCurso:352, enCursoHora:'18:00', enCursoMin:55,
+          corte:'2026-09-24 18:55', fechaLarga:'jueves 24 de septiembre',
           cierre:'2026-09-24T18:31:07-05:00', cierreTexto:'jueves 24 a las 18:31',
           horasActivas:1, picoAyer:4911};
 
