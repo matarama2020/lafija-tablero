@@ -97,8 +97,10 @@ h1{font-size:clamp(28px,5vw,44px); font-weight:700; letter-spacing:-.025em; line
    Con bordes por celda, cualquier salto de linea deja separadores sueltos;
    con gap de 1px sobre el color de linea, el separador sale solo y sirve
    para cualquier numero de columnas. */
-#kpis{grid-template-columns:repeat(5,minmax(0,1fr)); gap:1px; background:var(--line)}
-@media(max-width:1060px){#kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+   Son seis: en una sola fila las etiquetas se parten y los numeros quedan
+   apretados, asi que van en dos filas de tres — arriba el embudo de acceso,
+   abajo lo accionable. */
+#kpis{grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line)}
 @media(max-width:760px){#kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:400px){#kpis{grid-template-columns:1fr}}
 #kpis .kpi{border-right:0; border-bottom:0; background:var(--surface)}
@@ -566,23 +568,23 @@ var p2=function(x){return x.toFixed(x<10?2:1)+'%';};
 
 /* ---------- datos · corte 23/09/2026 10:24 Perú · una sola consulta ---------- */
 var PROD=[
- {k:'IMPULSA_MUJER',n:'Impulsa Mujer',c:'--c1',A:[77113,120834],B:[4227,6432],C:[33120,54222],D:[43145,71566]},
- {k:'MICROCREDITO',n:'Microcrédito',c:'--c2',A:[14959,38580],B:[307,988],C:[1665,4869],D:[6208,19514]},
- {k:'TIGRE',n:'Tigre',c:'--c3',A:[4771,7478],B:[246,405],C:[1404,2242],D:[2815,4721]},
- {k:'PYME',n:'Pyme',c:'--c4',A:[3546,4231],B:[64,79],C:[139,164],D:[942,1225]},
- {k:'GRUPPI',n:'Gruppi',c:'--c5',A:[1129,1715],B:[59,94],C:[483,827],D:[1098,1869]},
- {k:'AHORRISTA',n:'Ahorrista',c:'--c6',A:[246,246],B:[9,9],C:[5,5],D:[193,193]}
+ {k:'IMPULSA_MUJER',n:'Impulsa Mujer',c:'--c1',A:[77083,120783],B:[4220,6419],C:[33105,54196],D:[43197,71656]},
+ {k:'MICROCREDITO',n:'Microcrédito',c:'--c2',A:[14952,38552],B:[306,982],C:[1661,4868],D:[6220,19549]},
+ {k:'TIGRE',n:'Tigre',c:'--c3',A:[4767,7471],B:[247,406],C:[1403,2241],D:[2819,4728]},
+ {k:'PYME',n:'Pyme',c:'--c4',A:[3546,4231],B:[63,78],C:[140,165],D:[942,1225]},
+ {k:'GRUPPI',n:'Gruppi',c:'--c5',A:[1128,1712],B:[59,94],C:[482,825],D:[1100,1874]},
+ {k:'AHORRISTA',n:'Ahorrista',c:'--c6',A:[246,246],B:[9,9],C:[4,4],D:[194,194]}
 ];
 var CARTONES=342508;
-var GLOBAL={A:[95904,173084],B:[4535,8007],C:[33818,62329],D:[48612,99088]};
+var GLOBAL={A:[95869,172995],B:[4527,7988],C:[33800,62299],D:[48673,99226]};
 var SEGDEF=[
  {k:'A',n:'Sin cuenta en la app',v:'--s1',d:'Nunca se registró. Para jugar necesita descargar la app, registrarse y validar su celular por OTP. Es el trecho más largo y el que no se resuelve con un recordatorio.'},
  {k:'B',n:'Registro incompleto',v:'--s2',d:'Creó la cuenta pero no llegó a definir contraseña. Quedó a un paso: basta completar el registro para que pueda entrar y generar.'},
  {k:'C',n:'Registrada, sin generar',v:'--s3',d:'Tiene cuenta y contraseña. Entra a la app sin ayuda de nadie y solo le falta abrir la campaña y generar. Es el segmento accionable hoy.'},
  {k:'D',n:'Generó sus cartones',v:'--s4',d:'Ya tiene sus cartones asignados y está lista para el sorteo del 23 de septiembre.'}
 ];
-var HORA=[['22·11',6],['22·12',584],['22·13',972],['22·14',557],['22·15',477],['22·16',482],['22·17',563],['22·18',578],['22·19',390],['22·20',446],['22·21',514],['22·22',287],['22·23',126],['23·00',36],['23·01',19],['23·02',14],['23·03',17],['23·04',15],['23·05',29],['23·06',68],['23·07',100],['23·08',2110],['23·09',4911],['23·10',3218],['23·11',1956],['23·12',1424],['23·13',1212],['23·14',1257],['23·15',1397],['23·16',1238],['23·17',1083],['23·18',2332],['23·19',2828],['23·20',1643],['23·21',789],['23·22',371],['23·23',209],['24·00',85],['24·01',39],['24·02',14],['24·03',22],['24·04',20],['24·05',35],['24·06',107],['24·07',220],['24·08',465],['24·09',624],['24·10',1476],['24·11',1097],['24·12',806],['24·13',735],['24·14',586],['24·15',743],['24·16',745],['24·17',713],['24·18',370],['24·19',722],['24·20',553],['24·21',411],['24·22',308],['24·23',185],['25·00',63],['25·01',23],['25·02',1],['25·03',7],['25·04',9],['25·05',17],['25·06',51],['25·07',104],['25·08',512],['25·09',1216],['25·10',1070],['25·11',200]];
-var DIA=[['01',897,1908],['02',968,2019],['03',1130,2120],['04',1178,2268],['05',201,1364],['06',115,912],['07',954,1934],['08',1017,2099],['09',997,2249],['10',1146,2456],['11',1085,2333],['12',258,1534],['13',117,1089],['14',848,2100],['15',1039,2296],['16',976,2539],['17',875,2535],['18',924,2505],['19',208,1660],['20',59,1162],['21',1792,2824],['22',6047,9172],['23',18659,21874],['24',8398,14041],['25',2417,5366]];
+var HORA=[['22·11',6],['22·12',584],['22·13',972],['22·14',557],['22·15',477],['22·16',482],['22·17',563],['22·18',578],['22·19',390],['22·20',446],['22·21',514],['22·22',287],['22·23',126],['23·00',36],['23·01',19],['23·02',14],['23·03',17],['23·04',15],['23·05',29],['23·06',68],['23·07',100],['23·08',2110],['23·09',4911],['23·10',3218],['23·11',1956],['23·12',1424],['23·13',1212],['23·14',1257],['23·15',1397],['23·16',1238],['23·17',1083],['23·18',2332],['23·19',2828],['23·20',1643],['23·21',789],['23·22',371],['23·23',209],['24·00',85],['24·01',39],['24·02',14],['24·03',22],['24·04',20],['24·05',35],['24·06',107],['24·07',220],['24·08',465],['24·09',624],['24·10',1476],['24·11',1097],['24·12',806],['24·13',735],['24·14',586],['24·15',743],['24·16',745],['24·17',713],['24·18',370],['24·19',722],['24·20',553],['24·21',411],['24·22',308],['24·23',185],['25·00',63],['25·01',23],['25·02',1],['25·03',7],['25·04',9],['25·05',17],['25·06',51],['25·07',104],['25·08',512],['25·09',1216],['25·10',1070],['25·11',261]];
+var DIA=[['01',897,1908],['02',968,2019],['03',1130,2120],['04',1178,2268],['05',201,1364],['06',115,912],['07',954,1934],['08',1017,2099],['09',997,2249],['10',1146,2456],['11',1085,2333],['12',258,1534],['13',117,1089],['14',848,2100],['15',1039,2296],['16',976,2539],['17',875,2535],['18',924,2505],['19',208,1660],['20',59,1162],['21',1792,2824],['22',6047,9172],['23',18659,21874],['24',8398,14041],['25',2453,5444]];
 
 /* Datos de la pestaña Hoy. Se declaran aquí, antes de la cuenta
    regresiva, porque esa función usa META.cierre al arrancar. */
@@ -597,15 +599,15 @@ var HOY=[
  [6,38,28,0,0,51,109],
  [7,98,92,0,0,104,221],
  [8,422,383,0,0,512,1123],
- [9,849,769,0,0,1216,2455],
+ [9,849,770,0,0,1216,2455],
  [10,772,707,0,0,1070,2372],
- [11,144,104,0,0,200,454]
+ [11,180,146,0,0,261,592]
 ];
-var HOY_TOT={altas:2417, completos:2165, incompletos:252, incompElig:237, gen:3273, cart:7004};
-var ATASCO={crear:{total:255,vigente:59,expirado:196}, recuperar:{total:19,vigente:5,expirado:14}};
-var META={elegibles:182869, registradas:33818, cartonesReg:62329, sinCuenta:95904,
-          ultima:1070, ultimaHora:'10:00', enCurso:200, enCursoHora:'11:00', enCursoMin:10,
-          corte:'2026-09-25 11:10', fechaLarga:'viernes 25 de septiembre',
+var HOY_TOT={altas:2453, completos:2208, incompletos:245, incompElig:229, gen:3334, cart:7142};
+var ATASCO={crear:{total:249,vigente:51,expirado:198}, recuperar:{total:19,vigente:5,expirado:14}};
+var META={elegibles:182869, registradas:33800, cartonesReg:62299, sinCuenta:95869,
+          ultima:1070, ultimaHora:'10:00', enCurso:261, enCursoHora:'11:00', enCursoMin:12,
+          corte:'2026-09-25 11:12', fechaLarga:'viernes 25 de septiembre',
           cierre:'2026-09-25T10:59:02-05:00', cierreTexto:'viernes 25 a las 10:59',
           horasActivas:1, picoAyer:1476};
 
@@ -653,9 +655,11 @@ tick();setInterval(tick,30000);
 function view(){ if(sel===null) return {nom:'todos los productos', seg:GLOBAL};
   var p=PROD[sel]; return {nom:p.n, seg:{A:p.A,B:p.B,C:p.C,D:p.D}}; }
 function totals(v){ var s=0,c=0; ['A','B','C','D'].forEach(function(k){s+=v.seg[k][0];c+=v.seg[k][1];});
-  /* `listas` es el segmento C solo: tienen clave y NO generaron. Es el grupo
-     al que se puede llegar sin que la socia instale ni registre nada. */
-  return {socias:s,cart:c,gen:v.seg.D[0],cartGen:v.seg.D[1],listas:v.seg.C[0],
+  /* El segmento C es el grupo accionable: tienen clave y NO generaron, asi que
+     se les llega sin que instalen ni registren nada. `listas` son las socias y
+     `cartListas` las cartillas que dejarian de estar pendientes si generaran. */
+  return {socias:s,cart:c,gen:v.seg.D[0],cartGen:v.seg.D[1],
+          listas:v.seg.C[0],cartListas:v.seg.C[1],
           reg:v.seg.C[0]+v.seg.D[0],cuenta:v.seg.B[0]+v.seg.C[0]+v.seg.D[0]}; }
 var chips=document.getElementById('chips');
 function mkChip(label,idx,col){
@@ -690,6 +694,7 @@ function render(){
    {k:'Con cuenta creada',v:fmt(t.cuenta),p:p2(pc(t.cuenta,t.socias))+' de las habilitadas',w:pc(t.cuenta,t.socias),col:null},
    {k:'Registro completo',v:fmt(t.reg),p:p2(pc(t.reg,t.socias))+' · ya pueden entrar',w:pc(t.reg,t.socias),col:null},
    {k:'Con clave, sin generar',v:fmt(t.listas),p:'pueden generar ahora mismo',w:pc(t.listas,t.socias),col:'var(--warn)'},
+   {k:'Cartillas que esperan',v:fmt(t.cartListas),p:p2(pc(t.cartListas,t.cart))+' de las que están en juego',w:pc(t.cartListas,t.cart),col:'var(--warn)'},
    {k:'Generaron cartones',v:fmt(t.gen),p:p2(av)+' de las habilitadas',w:av,col:'var(--alert)'}];
   document.getElementById('kpis').innerHTML=K.map(function(x){
     return '<div class="kpi"><span class="k">'+x.k+'</span><div class="v num"'+(x.col?' style="color:'+x.col+'"':'')+'>'+x.v+'</div>'+
