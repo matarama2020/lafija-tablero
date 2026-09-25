@@ -271,6 +271,20 @@ footer b{color:var(--ink-2); font-weight:500}
 
   <section>
     <div class="sec-head">
+      <h2>Ingresos ahora mismo</h2>
+      <p id="sesNota"></p>
+    </div>
+    <div class="kpis" id="sesKpis" style="grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); margin-bottom:18px"></div>
+    <div class="panel">
+      <h3>Sesiones por tramo de 15 minutos</h3>
+      <p class="note">Ingresos con sesión válida en las últimas cuatro horas. La barra clara es el tramo en curso, todavía incompleto.</p>
+      <svg class="chart" id="cSes" viewBox="0 0 420 180" role="img" aria-label="Sesiones cada 15 minutos"></svg>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="sec-head">
       <h2>Dónde se detiene cada socia</h2>
       <p>Las cuatro etapas son excluyentes: cada socia cae en una sola. Toque una etapa para ver qué significa y qué haría falta para desbloquearla.</p>
     </div>
@@ -332,19 +346,6 @@ footer b{color:var(--ink-2); font-weight:500}
   </div>
 
   <div class="kpis" id="hKpis" style="margin-bottom:26px"></div>
-
-  <section style="margin-top:0">
-    <div class="sec-head">
-      <h2>Ingresos ahora mismo</h2>
-      <p id="sesNota"></p>
-    </div>
-    <div class="kpis" id="sesKpis" style="grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); margin-bottom:18px"></div>
-    <div class="panel">
-      <h3>Sesiones por tramo de 15 minutos</h3>
-      <p class="note">Ingresos con sesión válida en las últimas cuatro horas. La barra clara es el tramo en curso, todavía incompleto.</p>
-      <svg class="chart" id="cSes" viewBox="0 0 420 180" role="img" aria-label="Sesiones cada 15 minutos"></svg>
-    </div>
-  </section>
 
   <section>
     <div class="sec-head">
@@ -581,24 +582,24 @@ var p2=function(x){return x.toFixed(x<10?2:1)+'%';};
 
 /* ---------- datos · corte 23/09/2026 10:24 Perú · una sola consulta ---------- */
 var PROD=[
- {k:'IMPULSA_MUJER',n:'Impulsa Mujer',c:'--c1',A:[76751,120235],B:[4234,6455],C:[32869,53775],D:[43751,72589]},
- {k:'MICROCREDITO',n:'Microcrédito',c:'--c2',A:[14842,38237],B:[310,985],C:[1646,4803],D:[6341,19926]},
- {k:'TIGRE',n:'Tigre',c:'--c3',A:[4737,7415],B:[249,410],C:[1388,2217],D:[2862,4804]},
+ {k:'IMPULSA_MUJER',n:'Impulsa Mujer',c:'--c1',A:[76741,120218],B:[4239,6464],C:[32867,53770],D:[43758,72602]},
+ {k:'MICROCREDITO',n:'Microcrédito',c:'--c2',A:[14841,38236],B:[308,977],C:[1647,4809],D:[6343,19929]},
+ {k:'TIGRE',n:'Tigre',c:'--c3',A:[4736,7414],B:[250,411],C:[1388,2217],D:[2862,4804]},
  {k:'PYME',n:'Pyme',c:'--c4',A:[3533,4218],B:[66,81],C:[138,163],D:[954,1237]},
- {k:'GRUPPI',n:'Gruppi',c:'--c5',A:[1119,1696],B:[56,87],C:[475,813],D:[1119,1909]},
- {k:'AHORRISTA',n:'Ahorrista',c:'--c6',A:[244,244],B:[10,10],C:[4,4],D:[195,195]}
+ {k:'GRUPPI',n:'Gruppi',c:'--c5',A:[1118,1694],B:[57,89],C:[475,813],D:[1119,1909]},
+ {k:'AHORRISTA',n:'Ahorrista',c:'--c6',A:[244,244],B:[9,9],C:[5,5],D:[195,195]}
 ];
 var CARTONES=342508;
-var GLOBAL={A:[95422,172045],B:[4547,8028],C:[33562,61775],D:[49338,100660]};
+var GLOBAL={A:[95411,172024],B:[4550,8031],C:[33562,61777],D:[49346,100676]};
 var SEGDEF=[
  {k:'A',n:'Sin cuenta en la app',v:'--s1',d:'Nunca se registró. Para jugar necesita descargar la app, registrarse y validar su celular por OTP. Es el trecho más largo y el que no se resuelve con un recordatorio.'},
  {k:'B',n:'Registro incompleto',v:'--s2',d:'Creó la cuenta pero no llegó a definir contraseña. Quedó a un paso: basta completar el registro para que pueda entrar y generar.'},
  {k:'C',n:'Registrada, sin generar',v:'--s3',d:'Tiene cuenta y contraseña. Entra a la app sin ayuda de nadie y solo le falta abrir la campaña y generar. Es el segmento accionable hoy.'},
  {k:'D',n:'Generó sus cartones',v:'--s4',d:'Ya tiene sus cartones asignados y está lista para el sorteo del 23 de septiembre.'}
 ];
-var HORA=[['22·11',6],['22·12',584],['22·13',972],['22·14',557],['22·15',477],['22·16',482],['22·17',563],['22·18',578],['22·19',390],['22·20',446],['22·21',514],['22·22',287],['22·23',126],['23·00',36],['23·01',19],['23·02',14],['23·03',17],['23·04',15],['23·05',29],['23·06',68],['23·07',100],['23·08',2110],['23·09',4911],['23·10',3218],['23·11',1956],['23·12',1424],['23·13',1212],['23·14',1257],['23·15',1397],['23·16',1238],['23·17',1083],['23·18',2332],['23·19',2828],['23·20',1643],['23·21',789],['23·22',371],['23·23',209],['24·00',85],['24·01',39],['24·02',14],['24·03',22],['24·04',20],['24·05',35],['24·06',107],['24·07',220],['24·08',465],['24·09',624],['24·10',1476],['24·11',1097],['24·12',806],['24·13',735],['24·14',586],['24·15',743],['24·16',745],['24·17',713],['24·18',370],['24·19',722],['24·20',553],['24·21',411],['24·22',308],['24·23',185],['25·00',63],['25·01',23],['25·02',1],['25·03',7],['25·04',9],['25·05',17],['25·06',51],['25·07',104],['25·08',512],['25·09',1216],['25·10',1070],['25·11',926]];
-var SES15=[['07:45',102,96],['08:00',163,149],['08:15',226,208],['08:30',367,340],['08:45',465,413],['09:00',500,445],['09:15',541,475],['09:30',556,478],['09:45',513,474],['10:00',470,435],['10:15',544,495],['10:30',495,450],['10:45',465,425],['11:00',561,506],['11:15',602,538],['11:30',627,544],['11:45',1,1]];
-var DIA=[['01',897,1908],['02',968,2019],['03',1130,2120],['04',1178,2268],['05',201,1364],['06',115,912],['07',954,1934],['08',1017,2099],['09',997,2249],['10',1146,2456],['11',1085,2333],['12',258,1534],['13',117,1089],['14',848,2100],['15',1039,2296],['16',976,2539],['17',875,2535],['18',924,2505],['19',208,1660],['20',59,1162],['21',1792,2824],['22',6047,9172],['23',18659,21874],['24',8398,14041],['25',2915,6364]];
+var HORA=[['22·11',6],['22·12',584],['22·13',972],['22·14',557],['22·15',477],['22·16',482],['22·17',563],['22·18',578],['22·19',390],['22·20',446],['22·21',514],['22·22',287],['22·23',126],['23·00',36],['23·01',19],['23·02',14],['23·03',17],['23·04',15],['23·05',29],['23·06',68],['23·07',100],['23·08',2110],['23·09',4911],['23·10',3218],['23·11',1956],['23·12',1424],['23·13',1212],['23·14',1257],['23·15',1397],['23·16',1238],['23·17',1083],['23·18',2332],['23·19',2828],['23·20',1643],['23·21',789],['23·22',371],['23·23',209],['24·00',85],['24·01',39],['24·02',14],['24·03',22],['24·04',20],['24·05',35],['24·06',107],['24·07',220],['24·08',465],['24·09',624],['24·10',1476],['24·11',1097],['24·12',806],['24·13',735],['24·14',586],['24·15',743],['24·16',745],['24·17',713],['24·18',370],['24·19',722],['24·20',553],['24·21',411],['24·22',308],['24·23',185],['25·00',63],['25·01',23],['25·02',1],['25·03',7],['25·04',9],['25·05',17],['25·06',51],['25·07',104],['25·08',512],['25·09',1216],['25·10',1070],['25·11',934]];
+var SES15=[['11:45',27,27]];
+var DIA=[['01',897,1908],['02',968,2019],['03',1130,2120],['04',1178,2268],['05',201,1364],['06',115,912],['07',954,1934],['08',1017,2099],['09',997,2249],['10',1146,2456],['11',1085,2333],['12',258,1534],['13',117,1089],['14',848,2100],['15',1039,2296],['16',976,2539],['17',875,2535],['18',924,2505],['19',208,1660],['20',59,1162],['21',1792,2824],['22',6047,9172],['23',18659,21874],['24',8398,14041],['25',2926,6382]];
 
 /* Datos de la pestaña Hoy. Se declaran aquí, antes de la cuenta
    regresiva, porque esa función usa META.cierre al arrancar. */
@@ -615,12 +616,12 @@ var HOY=[
  [8,422,384,0,0,512,1123],
  [9,849,772,0,0,1216,2455],
  [10,772,714,0,0,1070,2372],
- [11,642,552,0,0,926,2026]
+ [11,653,559,0,0,934,2042]
 ];
-var HOY_TOT={altas:2915, completos:2626, incompletos:289, incompElig:274, gen:3999, cart:8576};
-var ATASCO={crear:{total:296,vigente:76,expirado:220}, recuperar:{total:23,vigente:8,expirado:15}};
-var META={elegibles:182869, registradas:33562, cartonesReg:61775, sinCuenta:95422,
-          ultima:1070, ultimaHora:'10:00', enCurso:926, enCursoHora:'11:00', enCursoMin:45,
+var HOY_TOT={altas:2926, completos:2633, incompletos:293, incompElig:278, gen:4007, cart:8592};
+var ATASCO={crear:{total:294,vigente:71,expirado:223}, recuperar:{total:23,vigente:8,expirado:15}};
+var META={elegibles:182869, registradas:33562, cartonesReg:61777, sinCuenta:95411,
+          ultima:1070, ultimaHora:'10:00', enCurso:934, enCursoHora:'11:00', enCursoMin:45,
           corte:'2026-09-25 11:45', fechaLarga:'viernes 25 de septiembre',
           cierre:'2026-09-25T10:59:02-05:00', cierreTexto:'viernes 25 a las 10:59',
           horasActivas:1, picoAyer:1476};
@@ -782,7 +783,10 @@ function tabla(){
    —lleva solo los minutos transcurridos— asi que no entra en el promedio ni
    se compara con los demas: se dibuja claro y se rotula aparte. */
 (function(){
-  if(!window.SES15||!SES15.length) return;
+  /* `typeof`, no `window.SES15`: la variable es un `var` del propio script y
+     consultarla por el objeto window fallaba en silencio — el bloque se
+     saltaba entero y el cuadro salia vacio sin ningun error. */
+  if(typeof SES15==='undefined'||!SES15.length) return;
   var n=SES15.length, curso=SES15[n-1], cerrados=SES15.slice(0,-1);
   var ult=cerrados.length?cerrados[cerrados.length-1]:curso;
   var prom=cerrados.length?Math.round(cerrados.reduce(function(a,d){return a+d[1];},0)/cerrados.length):curso[1];
